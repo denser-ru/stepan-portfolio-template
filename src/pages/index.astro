@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Главная | Stepan Portfolio">
+	<section class="hero">
+		<h1>Привет, я <span class="highlight">Junior Разработчик</span> 👋</h1>
+		<p class="subtitle">
+			Изучаю бэкенд на Python, системное программирование на Си и архитектуру серверов на Linux. 
+			Это мой инженерный лог-бук.
+		</p>
+		<div class="cta-buttons">
+			<a href="/projects" class="btn primary">Мои Проекты</a>
+			<a href="/blog" class="btn secondary">Читать Заметки</a>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		padding: 4rem 0;
+	}
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+	}
+	.highlight {
+		color: var(--accent);
+	}
+	.subtitle {
+		font-size: 1.2rem;
+		color: var(--text-muted);
+		margin-bottom: 2rem;
+	}
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+	}
+	.btn {
+		padding: 0.7rem 1.5rem;
+		border-radius: 6px;
+		font-weight: 600;
+	}
+	.btn.primary {
+		background-color: var(--accent);
+		color: #0f172a;
+	}
+	.btn.primary:hover {
+		background-color: var(--accent-hover);
+	}
+	.btn.secondary {
+		border: 1px solid var(--border);
+		color: var(--text-main);
+	}
+	.btn.secondary:hover {
+		background-color: var(--card-bg);
+	}
+</style>
