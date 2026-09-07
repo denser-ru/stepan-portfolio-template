@@ -1,0 +1,27 @@
+---
+import Layout from './Layout.astro';
+const { frontmatter } = Astro.props;
+---
+<Layout title={frontmatter.title}>
+	<article class="md-content">
+		<a href="/blog" class="back-link">← Назад в блог</a>
+		<h1>{frontmatter.title}</h1>
+		<p class="date">📅 {frontmatter.date}</p>
+		<div class="content"><slot /></div>
+	</article>
+</Layout>
+
+<style is:global>
+	.md-content { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+	.back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); font-weight: bold; }
+	.date { color: var(--text-muted); margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+	
+	/* Типографика для Markdown */
+	.content h1, .content h2, .content h3 { color: var(--text-main); margin-top: 2rem; margin-bottom: 1rem; }
+	.content p { margin-bottom: 1.5rem; line-height: 1.7; }
+	.content pre { padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid var(--border); }
+	.content code { color: #4ade80; background: #020617; padding: 0.2rem 0.4rem; border-radius: 4px; }
+	.content pre code { color: #e2e8f0; padding: 0; }
+	.content ul { margin-left: 2rem; margin-bottom: 1.5rem; }
+	.content li { margin-bottom: 0.5rem; }
+</style>
